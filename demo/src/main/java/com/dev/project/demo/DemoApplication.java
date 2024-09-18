@@ -1,4 +1,4 @@
-package com.dev.shopdienthoai.demo;
+package com.dev.project.demo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
