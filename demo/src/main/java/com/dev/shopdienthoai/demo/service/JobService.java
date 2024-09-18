@@ -44,7 +44,6 @@ public class JobService {
             List<Long> reqSkills = j.getSkills()
                     .stream().map(x -> x.getId())
                     .collect(Collectors.toList());
-
             List<Skill> dbSkills = this.skillRepository.findByIdIn(reqSkills);
             j.setSkills(dbSkills);
         }
@@ -56,7 +55,6 @@ public class JobService {
                 j.setCompany(cOptional.get());
             }
         }
-
         // create job
         Job currentJob = this.jobRepository.save(j);
 
@@ -130,6 +128,7 @@ public class JobService {
         dto.setActive(currentJob.isActive());
         dto.setUpdatedAt(currentJob.getUpdatedAt());
         dto.setUpdatedBy(currentJob.getUpdatedBy());
+
 
         if (currentJob.getSkills() != null) {
             List<String> skills = currentJob.getSkills()
